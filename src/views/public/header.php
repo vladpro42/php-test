@@ -20,13 +20,10 @@
                 <nav class="header__nav">
                     <ul class="header__list">
                         <li class="header__item">
-                            <a href="./src/articles/articlesTemplate.php" class="header__item-link">Статьи</a>
+                            <a href="index.php?action=articles" class="header__item-link">Статьи</a>
                         </li>
                         <li class="header__item">
-                            <a href="#" class="header__item-link">О нас</a>
-                        </li>
-                        <li class="header__item">
-                            <a class="header__item-link" href="./src/admin/admin.php">to admin</a>
+                            <a class="header__item-link" href="index.php?action=admin_services">to admin</a>
                         </li>
                     </ul>
                 </nav>

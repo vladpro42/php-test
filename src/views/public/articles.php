@@ -17,16 +17,14 @@
     <?php endforeach; ?>
 </ul>
 
-<!-- Пагинация -->
 
 <div class="pagination">
     <?php
-    $page = 3;
     if ($page > 1): ?>
-        <a href="index.php?action=services&page=<?php echo $page - 1; ?>">Предыдущая</a>
+        <a href="index.php?action=articles&page=<?php echo $page - 1; ?>">Предыдущая</a>
     <?php endif; ?>
 
     <?php if (count($articles) == 10): ?>
-        <a href="index.php?action=services&page=<?php echo $page + 1; ?>">Следующая</a>
+        <a href="index.php?action=articles&page=<?php echo $page + 1; ?>">Следующая</a>
     <?php endif; ?>
 </div>

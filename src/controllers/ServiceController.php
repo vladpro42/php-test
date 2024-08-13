@@ -71,7 +71,8 @@ class ServiceController
     }
     public function getArticles()
     {
-        $articles = $this->serviceModel->getArticles();
+        $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+        $articles = $this->serviceModel->getArticles($page);
         include 'src/views/public/articles.php';
     }
     public function getArticle($id)

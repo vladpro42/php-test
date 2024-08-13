@@ -27,10 +27,14 @@ class ArticlesModel
         $stmt = $this->db->prepare($sql);
         return $stmt->execute([$name, $content, $image, $id]);
     }
-    public function getArticles()
+    public function getArticles($page = 1, $limit = 10)
     {
-        $sql = 'SELECT * FROM articles';
+        $offset = ($page - 1) * $limit;
+
+        $sql = 'SELECT * FROM articles LIMIT :limit OFFSET :offset';
         $stmt = $this->db->prepare($sql);
+        $stmt->bindValue(':limit', $limit, PDO::PARAM_INT);
+        $stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
